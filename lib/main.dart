@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_shop/views/DescriptionPage.dart';
 import 'package:pet_shop/views/homePage.dart';
 import 'package:pet_shop/views/loginView.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: DescriptionPage(),
     );
   }
 }

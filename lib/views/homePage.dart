@@ -115,9 +115,32 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.only(right: 20),
               child: Icon(
-                Icons.notifications_none,
+                Icons.notifications_none_outlined,
                 color: Colors.black,
               ),
+            ),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          selectedItemColor: AppColors.primaryColor,
+          unselectedItemColor: Colors.grey,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.star),
+              label: 'Favourite',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
         ),
@@ -302,7 +325,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
@@ -337,8 +360,18 @@ class _HomePageState extends State<HomePage> {
                                   fit: BoxFit.fill,
                                 ),
                               ),
-                              child: Icon(Icons.star_border,
-                                  color: Colors.white, size: 30),
+                              child: Container(
+                                height: 35,
+                                width: 35,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffffffff).withOpacity(0.4),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
+                                child: Icon(Icons.star_border,
+                                    color: Colors.white, size: 30),
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
